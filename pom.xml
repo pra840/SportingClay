@@ -26,38 +26,6 @@
         <tomcat.embed.version>8.0.20</tomcat.embed.version>
     </properties>
 
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <url>http://isgnexus.deere.com/nexus/content/repositories/releases
-            </url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <url>http://isgnexus.deere.com/nexus/content/repositories/snapshots
-            </url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>axiom-nexus</id>
-            <url>http://isgnexus.deere.com/nexus/content/groups/public</url>
-        </repository>
-
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>jdPlugins-releases</id>
-            <url>http://isgnexus.deere.com/nexus/content/repositories/releases</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>jdPlugins-snapshot</id>
-            <url>http://isgnexus.deere.com/nexus/content/repositories/snapshots</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <dependencies>
         <dependency>
             <groupId>de.javakaffee.msm</groupId>
@@ -135,26 +103,6 @@
             <version>${org.springframework.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.deere.sourceworks</groupId>
-            <artifactId>sourceworks</artifactId>
-            <version>1.0-release-7</version>
-        </dependency>
-        <dependency>
-            <groupId>com.deere.soartm</groupId>
-            <artifactId>soartm</artifactId>
-            <version>3.0.3a-Release-7</version>
-        </dependency>
-        <dependency>
-            <groupId>com.deere.soartm</groupId>
-            <artifactId>soartm-ws</artifactId>
-            <version>3.0.3a-Release-7</version>
-        </dependency>
-        <dependency>
-            <groupId>com.deere.soartm</groupId>
-            <artifactId>soartm-xom</artifactId>
-            <version>3.0.3a-Release-7</version>
-        </dependency>
-        <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
             <version>2.4</version>
@@ -163,31 +111,6 @@
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
             <version>1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.deere.u90950</groupId>
-            <artifactId>registration-login-client</artifactId>
-            <version>1.x-2009.10.08</version>
-        </dependency>
-        <dependency>
-            <groupId>com.deere.u90.iaf</groupId>
-            <artifactId>iaf-configuration-framework</artifactId>
-            <version>6.7.3.0000</version>
-        </dependency>
-        <dependency>
-            <groupId>com.deere.u90.iaf</groupId>
-            <artifactId>iaf-logging-framework</artifactId>
-            <version>6.9.5.0000</version>
-        </dependency>
-        <dependency>
-            <groupId>com.deere.u90.iaf</groupId>
-            <artifactId>iaf-exception-framework</artifactId>
-            <version>1.2.4.0000</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ibm.ws.prereq</groupId>
-            <artifactId>soap</artifactId>
-            <version>7.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.xmlgraphics</groupId>
@@ -230,11 +153,6 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.deere.soartm</groupId>
-            <artifactId>soartm-log-client</artifactId>
-            <version>2.0.2.0000</version>
-        </dependency>
-        <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>runtime</artifactId>
             <version>0.4.1</version>
@@ -266,9 +184,9 @@
         </dependency>
 
         <dependency>
-            <groupId>oracle.jdbc</groupId>
-            <artifactId>oracle.jdbc.driver</artifactId>
-            <version>11.2.0.3</version>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0</version>
         </dependency>
         <dependency>
             <groupId>org.jasypt</groupId>
