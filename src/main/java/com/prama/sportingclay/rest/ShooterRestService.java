@@ -18,7 +18,7 @@ public class ShooterRestService {
     private ShooterController shooterController;
 
     @RequestMapping(value = "/shooter/{userName}", produces = APPLICATION_JSON_VALUE)
-        public ShooterInfoBean getUserDetails(@PathVariable(value="userName") String userName){
+    public ShooterInfoBean getUserDetails(@PathVariable(value="userName") String userName){
         return shooterController.getShooterDetails(userName);
     }
 }

@@ -1,1 +1,0 @@
-typeof module=="object"&&module&&typeof module.exports=="object"?module.exports=jQuery:(window.jQuery=window.$=jQuery,typeof define=="function"&&define.amd&&define("jquery",[],function(){return jQuery}));

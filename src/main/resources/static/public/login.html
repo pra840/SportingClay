@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
-<p>-------Prama Shooting Clay Login---------</p>
-<img src="/images/prasad.jpg" alt="Prasad" style="width:100%;height:100%">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="/public/login.css">
+</head>
+
 <body>
-<div>
-    <input type="text" placeholder="ID" data-id="userId" data-default="ID" data-placeholder-res-id="UserIdLG" />
-    <input type="password" placeholder="PASSWORD" data-id="userPassword" data-default="PASSWORD" data-placeholder-res-id="UserPassword" />
+    <div class = "login">
+        <div id="login-top">
+            &nbsp;
+            <div id="login-messages" style="display: none;">
+                <span id="login-error"></span>
+            </div>
+            <div id="login-overlay">
+                <h1 id="login-title" data-res-id="pramaTM"></h1>
 
-    <a href="#" target="_blank" data-res-id="ForgotPasswordTitle">Forgot Password</a>
-    <a href="#" target="_blank" data-res-id="SignIn">SIGN IN</a>
-    <a href="#" target="_blank" data-res-id="SignUp">SIGN UP</a>
+                <div class="divider-solid" style="margin: 10px -10px;">
+                </div>
+                <div id="userDetails" class="clearfix">
+                    <input id="userId" data-id="userId" type="text" class="required error-inside rounded"
+                           data-default="ID" data-placeholder-res-id="UserIdLG" placeholder="ID" />
+                    <input id="userPassword" data-id="userPassword" type="password" class="required error-inside rounded"
+                           data-default="PASSWORD" data-placeholder-res-id="UserPassword" placeholder="PASSWORD"/>
 
-</div>
+                    <a href="http://10.10.33.138:8072/prama/sportingclay/shooter/Prasad Mallapur" target="_blank" style="display: none;" id="forgot-password-action" data-res-id="ForgotPasswordTitle" style="display:block">Forgot Password</a>
+
+                    <a href="http://10.10.33.138:8072/prama/sportingclay/shooter/Prasad Mallapur" target="_blank" data-res-id="SignUp">SIGN UP</a>
+
+                    <a href="http://10.10.33.138:8072/prama/sportingclay/shooter/auth?userId=pra840@gmail.com&pass=password12" target="_blank" data-res-id="SignIn">Sign IN</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

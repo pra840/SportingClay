@@ -1,17 +1,22 @@
 package com.prama.sportingclay.view.bean;
 
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.sql.Timestamp;
 
 /**
  * Created by pmallapur on 6/19/2016.
  */
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ShooterInfoBean extends PageDataBean {
     private String emailAddress;
     private String shooterClass;
     private Integer phoneNumber;
     private String occupation;
-    private Timestamp dateOfBirth;
-    private Timestamp registrationDate;
+    private Long dateOfBirth;
+    private Long registrationDate;
 
     public Integer getPhoneNumber() {
         return phoneNumber;
@@ -29,19 +34,19 @@ public class ShooterInfoBean extends PageDataBean {
         this.occupation = occupation;
     }
 
-    public Timestamp getDateOfBirth() {
+    public Long getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Timestamp dateOfBirth) {
+    public void setDateOfBirth(Long dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Timestamp getRegistrationDate() {
+    public Long getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(Timestamp registrationDate) {
+    public void setRegistrationDate(Long registrationDate) {
         this.registrationDate = registrationDate;
     }
 

@@ -10,6 +10,7 @@ import java.io.IOException;
  */
 public abstract class BaseController {
     public static final String LOGIN_PAGE = "/public/login.html";
+    public static final String ERROR_PAGE = "/public/error.html";
 
     protected void redirectToPage(String page, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher(page).forward(request, response);

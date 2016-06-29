@@ -17,7 +17,7 @@ public enum ShooterClassEnum {
     CLASS_D(6, "D"),
     CLASS_E(7, "E");
 
-    private static final Map<Integer,ShooterClassEnum> lookup    = new HashMap<>();
+    private static final Map<Integer,ShooterClassEnum> lookup = new HashMap<>();
 
     ShooterClassEnum(Integer shooterClassId, String shooterClass) {
         this.shooterClass = shooterClass;

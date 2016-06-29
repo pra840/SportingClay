@@ -27,16 +27,13 @@ public class Shooter {
     private Integer shooterClassId;
 
     @Column (name = "PHONE_NUM")
-    private Integer phoneNumber;
+    private Long phoneNumber;
 
     @Column (name = "OCCUPATION")
     private String occupation;
 
     @Column (name = "DATE_OF_BIRTH")
     private Timestamp dateOfBirth;
-
-    @Column (name = "RGSTD_TIME")
-    private Timestamp registrationdate;
 
     public Integer getShooterClassId() {
         return shooterClassId;
@@ -46,11 +43,11 @@ public class Shooter {
         this.shooterClassId = shooterClassId;
     }
 
-    public Integer getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -69,15 +66,6 @@ public class Shooter {
     public void setDateOfBirth(Timestamp dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-
-    public Timestamp getRegistrationdate() {
-        return registrationdate;
-    }
-
-    public void setRegistrationdate(Timestamp registrationdate) {
-        this.registrationdate = registrationdate;
-    }
-
 
     public Integer getShooterId() {
         return shooterId;

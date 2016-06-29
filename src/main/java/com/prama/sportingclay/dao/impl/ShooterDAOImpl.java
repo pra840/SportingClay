@@ -2,6 +2,7 @@ package com.prama.sportingclay.dao.impl;
 
 import com.prama.sportingclay.dao.ShooterDAO;
 import com.prama.sportingclay.domain.Shooter;
+import com.prama.sportingclay.utility.CommonMethods;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
@@ -26,13 +27,29 @@ public class ShooterDAOImpl implements ShooterDAO {
     @Qualifier("sportingclayEmf")
     private EntityManager em;
 
+    @Resource
+    CommonMethods commonMethods;
+
+    @Override
     public Shooter getShooterInformation(String shooterName) {
-        Query query = em.createQuery("from Shooter where shooterName = :SHOOTER_NAME ");
+        String shooterNm = commonMethods.removeLastCharacter(shooterName);
+        if(commonMethods.isEmail(shooterNm)){
+            return getShooterInfoByEmail(shooterNm);
+        }
+        return getShooterInfoByName(shooterNm);
+    }
 
-        query.setParameter("SHOOTER_NAME", shooterName);
-
+    private Shooter getShooterInfoByEmail(String shooterEmailAddress){
+        Query query = em.createQuery("from Shooter where shooterEmailAddress = :EMAIL_ADDRESS ");
+        query.setParameter("EMAIL_ADDRESS", shooterEmailAddress);
         List<Shooter> shooters = (List<Shooter>) query.getResultList();
+        return shooters != null && shooters.size() > 0 ? shooters.get(0) : null;
+    }
 
+    private Shooter getShooterInfoByName(String shooterName){
+        Query query = em.createQuery("from Shooter where shooterName = :SHOOTER_NAME ");
+        query.setParameter("SHOOTER_NAME", shooterName);
+        List<Shooter> shooters = (List<Shooter>) query.getResultList();
         return shooters != null && shooters.size() > 0 ? shooters.get(0) : null;
     }
 }
