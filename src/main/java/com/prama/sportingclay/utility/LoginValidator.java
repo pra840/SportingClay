@@ -3,8 +3,11 @@ package com.prama.sportingclay.utility;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 
+import javax.ws.rs.QueryParam;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static org.apache.commons.lang.StringUtils.isEmpty;
 
 @Component
 public class LoginValidator {
@@ -28,11 +31,11 @@ public class LoginValidator {
             throw new RuntimeException("WRONG PASSWORD!!");
     }
 
-    public void validateIncomingPass(String pass) {
+    public static void validateIncomingPass(String pass) {
 //        Pattern pattern = Pattern.compile(VALID_PASS);
 //        Matcher password = pattern.matcher(pass);
 
-        if(StringUtils.isEmpty(pass)){
+        if(isEmpty(pass)){
             throw new RuntimeException("WRONG PASSWORD FORMAT");
         }
     }

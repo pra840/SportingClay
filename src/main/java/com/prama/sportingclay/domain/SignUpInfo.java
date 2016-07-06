@@ -4,16 +4,23 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
 @Entity
 @Table(name = "SIGN_UP_INFO")
-public class SignUpInfo implements Serializable{
+public class SignUpInfo extends PersistentObject implements Serializable{
 
     @Id
+    @SequenceGenerator(name="SHOOTER_ID_SEQ_GENERATOR", sequenceName="SHOOTER_ID_SEQ" , allocationSize = 1)
+    @GeneratedValue(strategy = SEQUENCE, generator="SHOOTER_ID_SEQ_GENERATOR")
+    @Column(name = "ID")
+    private Integer id;
+
     @Column (name= "SHOOTER_ID")
     private Integer shooterId;
 
-    @OneToOne(mappedBy = "questionId", fetch = FetchType.LAZY,cascade=CascadeType.ALL)
-    private Question questionId;
+    @Column(name = "QUESTION_ID")
+    private Integer questionId;
 
     @Column(name = "RGSTD_TIME")
     private Timestamp registrationdate;
@@ -34,11 +41,19 @@ public class SignUpInfo implements Serializable{
         this.registrationdate = registrationdate;
     }
 
-    public Question getQuestionId() {
+    public Integer getQuestionId() {
         return questionId;
     }
 
-    public void setQuestionId(Question questionId) {
+    public void setQuestionId(Integer questionId) {
         this.questionId = questionId;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

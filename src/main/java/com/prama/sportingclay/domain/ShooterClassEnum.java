@@ -17,14 +17,14 @@ public enum ShooterClassEnum {
     CLASS_D(6, "D"),
     CLASS_E(7, "E");
 
-    private static final Map<Integer,ShooterClassEnum> lookup = new HashMap<>();
+    private static final Map<Integer,String> lookup = new HashMap<>();
 
     ShooterClassEnum(Integer shooterClassId, String shooterClass) {
         this.shooterClass = shooterClass;
         this.shooterClassId = shooterClassId;
     }
 
-    public static ShooterClassEnum getShooterClass(Integer shooterClassId){
+    public static String getShooterClass(Integer shooterClassId){
         return lookup.get(shooterClassId);
     }
 
@@ -36,13 +36,21 @@ public enum ShooterClassEnum {
 
     private Integer shooterClassId;
 
-
     public String getShooterClass() {
         return shooterClass;
     }
 
     static {
         for(ShooterClassEnum w : EnumSet.allOf(ShooterClassEnum.class))
-            lookup.put(w.getShooterClassId(), w);
+            lookup.put(w.getShooterClassId(), w.getShooterClass());
+    }
+
+    public static Integer getShooterClass(String shooterClass){
+        for(Map.Entry<Integer, String> value: lookup.entrySet()){
+            if(value.getValue().equals(shooterClass)){
+                return value.getKey();
+            }
+        }
+        return null;
     }
 }

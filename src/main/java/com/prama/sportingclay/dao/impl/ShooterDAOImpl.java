@@ -25,7 +25,7 @@ public class ShooterDAOImpl implements ShooterDAO {
 
     @PersistenceContext(unitName = "sportingclay")
     @Qualifier("sportingclayEmf")
-    private EntityManager em;
+    private EntityManager emf;
 
     @Resource
     CommonMethods commonMethods;
@@ -40,15 +40,23 @@ public class ShooterDAOImpl implements ShooterDAO {
     }
 
     private Shooter getShooterInfoByEmail(String shooterEmailAddress){
-        Query query = em.createQuery("from Shooter where shooterEmailAddress = :EMAIL_ADDRESS ");
+        Query query = emf.createQuery("from Shooter where shooterEmailAddress = :EMAIL_ADDRESS ");
         query.setParameter("EMAIL_ADDRESS", shooterEmailAddress);
         List<Shooter> shooters = (List<Shooter>) query.getResultList();
         return shooters != null && shooters.size() > 0 ? shooters.get(0) : null;
     }
 
     private Shooter getShooterInfoByName(String shooterName){
-        Query query = em.createQuery("from Shooter where shooterName = :SHOOTER_NAME ");
+        Query query = emf.createQuery("from Shooter where shooterName = :SHOOTER_NAME ");
         query.setParameter("SHOOTER_NAME", shooterName);
+        List<Shooter> shooters = (List<Shooter>) query.getResultList();
+        return shooters != null && shooters.size() > 0 ? shooters.get(0) : null;
+    }
+
+    @Override
+    public Shooter getShooterInfoById(Integer shooterId){
+        Query query = emf.createQuery("from Shooter where shooterId = :SHOOTER_ID ");
+        query.setParameter("SHOOTER_ID", shooterId);
         List<Shooter> shooters = (List<Shooter>) query.getResultList();
         return shooters != null && shooters.size() > 0 ? shooters.get(0) : null;
     }

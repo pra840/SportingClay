@@ -1,20 +1,22 @@
 package com.prama.sportingclay.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
+
+import static javax.persistence.GenerationType.SEQUENCE;
 
 /**
  * Created by pmallapur on 6/19/2016.
  */
 @Entity
 @Table(name = "SHOOTER")
-public class Shooter {
+public class Shooter extends PersistentObject implements Serializable{
 
     @Id
-    @Column (name = "SHOOTER_ID")
+    @SequenceGenerator(name="SHOOTER_ID_SEQ_GENERATOR", sequenceName="SHOOTER_ID_SEQ" , allocationSize = 1)
+    @GeneratedValue(strategy = SEQUENCE, generator="SHOOTER_ID_SEQ_GENERATOR")
+    @Column(name = "SHOOTER_ID")
     private Integer shooterId;
 
     @Column (name = "SHOOTER_NAME")
@@ -89,9 +91,5 @@ public class Shooter {
 
     public void setShooterEmailAddress(String shooterEmailAddress) {
         this.shooterEmailAddress = shooterEmailAddress;
-    }
-
-    public ShooterClassEnum getShooterClass() {
-        return ShooterClassEnum.getShooterClass(shooterClassId);
     }
 }

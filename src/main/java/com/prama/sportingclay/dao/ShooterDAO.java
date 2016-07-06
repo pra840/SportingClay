@@ -8,4 +8,6 @@ import com.prama.sportingclay.domain.Shooter;
 public interface ShooterDAO {
 
     Shooter getShooterInformation(String shooterName);
+
+    Shooter getShooterInfoById(Integer shooterId);
 }

@@ -1,40 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Login Form</title>
-    <link rel="stylesheet" href="/public/login.css">
-</head>
-
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<title>Login Form</title>
+<link rel="stylesheet" href="/public/login.css">
+<script type="text/javascript" src="/public/login.js"></script>
 <body>
-    <div class = "login">
-        <div id="login-top">
-            &nbsp;
-            <div id="login-messages" style="display: none;">
-                <span id="login-error"></span>
+<div class = "login">
+    <div id="login-top">
+        &nbsp;
+        <div id="login-messages" style="display: none;">
+            <span id="login-error"></span>
+        </div>
+        <div id="login-overlay">
+            <h1 id="login-title" data-res-id="pramaTM"></h1>
+
+            <div class="divider-solid" style="margin: 10px -10px;">
             </div>
-            <div id="login-overlay">
-                <h1 id="login-title" data-res-id="pramaTM"></h1>
+            <div id="userDetails" class="clearfix">
+                <input id="userId" data-id="userId" type="text" class="required error-inside rounded"
+                       data-default="ID" data-placeholder-res-id="UserIdLG" placeholder="ID" />
+                <input id="userPassword" data-id="userPassword" type="password" class="required error-inside rounded"
+                       data-default="PASSWORD" data-placeholder-res-id="UserPassword" placeholder="PASSWORD"/>
+                <p>
+                    <input id= "signIn" type="button" value = "SIGN IN"/>
+                    &nbsp;
+                    <input id= "signUp" type="button" value = "SIGN UP" onclick="window.location.href='/public/signup.html';"/></p>
 
-                <div class="divider-solid" style="margin: 10px -10px;">
-                </div>
-                <div id="userDetails" class="clearfix">
-                    <input id="userId" data-id="userId" type="text" class="required error-inside rounded"
-                           data-default="ID" data-placeholder-res-id="UserIdLG" placeholder="ID" />
-                    <input id="userPassword" data-id="userPassword" type="password" class="required error-inside rounded"
-                           data-default="PASSWORD" data-placeholder-res-id="UserPassword" placeholder="PASSWORD"/>
-
-                    <a href="http://10.10.33.138:8072/prama/sportingclay/shooter/Prasad Mallapur" target="_blank" style="display: none;" id="forgot-password-action" data-res-id="ForgotPasswordTitle" style="display:block">Forgot Password</a>
-
-                    <a href="http://10.10.33.138:8072/prama/sportingclay/shooter/Prasad Mallapur" target="_blank" data-res-id="SignUp">SIGN UP</a>
-
-                    <a href="http://10.10.33.138:8072/prama/sportingclay/shooter/auth?userId=pra840@gmail.com&pass=password12" target="_blank" data-res-id="SignIn">Sign IN</a>
-
-                </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 
 </html>

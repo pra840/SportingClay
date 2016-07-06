@@ -17,11 +17,9 @@
         <spring.boot.version>1.3.0.RELEASE</spring.boot.version>
         <resteasy.version>2.1.0.GA</resteasy.version>
         <prama-jar.version>${project.version}</prama-jar.version>
-        <cobertura.version>1.9.4.1</cobertura.version>
 
         <org.hibernate.version>4.3.8.Final</org.hibernate.version>
         <org.hibernate.jpa.version>1.0.0.Final</org.hibernate.jpa.version>
-        <iaf.exception.framework.version>1.2.0.0001</iaf.exception.framework.version>
         <org.springframework.version>4.2.3.RELEASE</org.springframework.version>
         <tomcat.embed.version>8.0.20</tomcat.embed.version>
     </properties>
@@ -208,8 +206,12 @@
             <artifactId>resteasy-jackson-provider</artifactId>
             <version>2.3.4.Final</version>
         </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <!-- builds customized require.js modules -->

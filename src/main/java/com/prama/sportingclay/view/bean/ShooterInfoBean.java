@@ -17,6 +17,7 @@ public class ShooterInfoBean extends PageDataBean {
     private String occupation;
     private Long dateOfBirth;
     private Long registrationDate;
+    private LoginDataBean loginDataBean;
 
     public Integer getPhoneNumber() {
         return phoneNumber;
@@ -64,5 +65,13 @@ public class ShooterInfoBean extends PageDataBean {
 
     public void setShooterClass(String shooterClass) {
         this.shooterClass = shooterClass;
+    }
+
+    public LoginDataBean getLoginDataBean() {
+        return loginDataBean;
+    }
+
+    public void setLoginDataBean(LoginDataBean loginDataBean) {
+        this.loginDataBean = loginDataBean;
     }
 }
