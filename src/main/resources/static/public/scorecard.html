@@ -1,0 +1,1687 @@
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<title>Submit Scorecard Form</title>
+<link rel="stylesheet" href="/public/scorecard.css">
+<script type="text/javascript" src="/public/scorecard.js"></script>
+<body>
+    <div class = "scorecard">
+        <div id="scorecard-top">
+            &nbsp;
+            <div id="scorecard-messages" style="display: none;">
+                <span id="scorecard-error"></span>
+            </div>
+            <div id="scorecard-overlay">
+                <h1 id="scorecard-title" data-res-id="pramaTM"></h1>
+            </div>
+            <table id="scorecardTable" class="display" cellspacing="0" width="100%">
+                <thead>
+                <h1>MY SCORECARD</h1>
+                <tr class ="tr-station">
+                    <th colspan="15">STATIONS</th>
+                </tr>
+                <tr class ="tr-stations">
+                    <th></th>
+                    <th>Station1</th>
+                    <th>Station2</th>
+                    <th>Station3</th>
+                    <th>Station4</th>
+                    <th>Station5</th>
+                    <th>Station6</th>
+                    <th>Station7</th>
+                    <th>Station8</th>
+                    <th>Station9</th>
+                    <th>Station10</th>
+                    <th>Station11</th>
+                    <th>Station12</th>
+                    <th>Station13</th>
+                    <th>Station14</th>
+                    <th>Station15</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class ="tr-target1">
+                    <td><strong>Target1</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target2">
+                    <td><strong>Target2</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target3">
+                    <td class><strong>Target3</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target4">
+                    <td><strong>Target4</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target5">
+                    <td><strong>Target5</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target6">
+                    <td><strong>Target6</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target7">
+                    <td><strong>Target7</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target8">
+                    <td><strong>Target8</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target9">
+                    <td><strong>Target9</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target10">
+                    <td><strong>Target10</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target11">
+                    <td><strong>Target11</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target12">
+                    <td><strong>Target12</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target13">
+                    <td><strong>Target13</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target14">
+                    <td><strong>Target14</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-target15">
+                    <td><strong>Target15</strong></td>
+                    <td class="countMe1">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe2">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe3">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe4">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe5">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe6">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe7">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe8">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe9">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe10">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe11">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe12">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe13">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe14">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                    <td class="countMe15">
+                        <select onchange="this.className=this.options[this.selectedIndex].className">
+                            <option selected="selected">HIT OR MISS</option>
+                            <option class = "greenText" value=1>HIT</option>
+                            <option class = "redText" value=0>MISS</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class ="tr-tt">
+                    <td class="TT"><strong>TargetTotal</strong></td>
+                    <td class="TT1"></td>
+                    <td class="TT2"></td>
+                    <td class="TT3"></td>
+                    <td class="TT4"></td>
+                    <td class="TT5"></td>
+                    <td class="TT6"></td>
+                    <td class="TT7"></td>
+                    <td class="TT8"></td>
+                    <td class="TT9"></td>
+                    <td class="TT10"></td>
+                    <td class="TT11"></td>
+                    <td class="TT12"></td>
+                    <td class="TT13"></td>
+                    <td class="TT14"></td>
+                    <td class="TT15"></td>
+                </tr>
+            </table>
+
+            <p>
+                <input id= "submitScore" type="button" value = "SUBMIT SCORE"/>
+            </p>
+
+        </div>
+    </div>
+</body>

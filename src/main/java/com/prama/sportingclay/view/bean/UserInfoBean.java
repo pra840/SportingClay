@@ -11,6 +11,7 @@ public class UserInfoBean extends PageDataBean {
     private String shooterClass;
     private Integer phoneNumber;
     private String occupation;
+    private String role;
 
     public String getUserName() {
         return userName;
@@ -66,5 +67,13 @@ public class UserInfoBean extends PageDataBean {
 
     public void setOccupation(String occupation) {
         this.occupation = occupation;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

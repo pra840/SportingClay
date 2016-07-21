@@ -7,7 +7,6 @@ import com.prama.sportingclay.domain.Auth;
  */
 public interface AuthDAO {
 
-    Auth getAuthenticationInfo(String userId);
-
-    void signUp(Auth auth);
+    Auth getAuthenticationInfo(String email);
+    Auth getAuthenticationInfo(Integer shooterId);
 }

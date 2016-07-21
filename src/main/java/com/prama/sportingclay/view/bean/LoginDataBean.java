@@ -5,16 +5,7 @@ package com.prama.sportingclay.view.bean;
  */
 public class LoginDataBean extends PageDataBean{
 
-    private String success;
     private String role;
-
-    public String getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(String success) {
-        this.success = success;
-    }
 
     public String getRole() {
         return role;

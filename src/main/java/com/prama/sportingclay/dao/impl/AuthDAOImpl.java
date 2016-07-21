@@ -4,7 +4,6 @@ import com.prama.sportingclay.dao.AuthDAO;
 import com.prama.sportingclay.domain.Auth;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
@@ -37,14 +36,14 @@ public class AuthDAOImpl implements AuthDAO {
     }
 
     @Override
-    @Transactional
-    public void signUp(Auth auth) {
-        if(auth.getShooterId() == null){
-            emf.persist(auth);
-            emf.flush();
-            emf.refresh(auth);
-        }
-        else
-            emf.merge(auth);
+    public Auth getAuthenticationInfo(Integer shooterId) {
+        Query query = emf.createQuery("from Auth where shooterId = :SHOOTER_ID ");
+
+        query.setParameter("SHOOTER_ID", shooterId);
+
+        List<Auth> auth = (List<Auth>) query.getResultList();
+
+        return auth != null && auth.size() > 0 ? auth.get(0) : null;
+
     }
 }

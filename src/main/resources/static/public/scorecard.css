@@ -1,0 +1,114 @@
+.scorecard
+{
+    font-size: 14px;
+    font-weight: bold;
+}
+input[type="text"]
+{
+    font-size: inherit;
+    line-height: inherit;
+    height: 16px;
+}
+.scorecard h1
+{
+    color: #333333;
+    margin: 0px;
+}
+.scorecard h1
+{
+    /*line-height: 34px; */
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    width: 135px;
+    line-height: 24px;
+}
+#scorecard-top
+{
+    background-image: url("/images/newRu.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    position: relative;
+    overflow: auto;
+    z-index: 1;
+}
+#scorecard-messages
+{
+    color: #CC6600;
+    font-weight: bold;
+    font-size: 13px;
+    height: 50px;
+    left: 426px;
+    padding: 40px 20px;
+    position: absolute;
+    top: 225px;
+    width: 250px;
+    z-index: 2;
+    padding: 40px 20px 40px 20px;
+}
+#scorecard-overlay
+{
+    z-index: 2;
+    position: absolute;
+    top: 24px;
+    left: 716px;
+    width: 182px;
+    height: 395px;
+    line-height: 15px;
+    font-size: 13px;
+    padding: 20px 20px;
+    overflow-y: auto;
+}
+#scorecard-overlay .wait-div-inner {
+    min-width: 175px;
+}
+#scorecard-action
+{
+    width: 178px;
+    height: inherit;
+}
+#scorecard-action .ui-button-text {
+    padding: 3px 10px;
+    text-align: center;
+    width: 158px;
+    min-height: 18px;
+    height: inherit;
+}
+#signUpNewUser input
+ {
+    margin-bottom: 8px;
+}
+#forgot-password-action {
+    padding-bottom: 10px;
+}
+
+table {
+  margin:1em auto;
+}
+td {
+  height:30px;
+  width:30px;
+  border:1px solid;
+  text-align:center;
+}
+td:first-child {
+  border-left:solid;
+}
+td:nth-child(3n) {
+  border-right:solid ;
+}
+tr:first-child {
+  border-top:solid;
+}
+tr:nth-child(3n) td {
+  border-bottom:solid ;
+}
+.greenText{ background-color:green; }
+
+.blueText{ background-color:blue; }
+
+.redText{ background-color:red; }

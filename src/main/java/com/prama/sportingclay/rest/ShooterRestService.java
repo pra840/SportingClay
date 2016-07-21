@@ -1,23 +1,26 @@
 package com.prama.sportingclay.rest;
 
 import com.prama.sportingclay.controller.ShooterController;
-import com.prama.sportingclay.service.ShooterService;
+import com.prama.sportingclay.view.bean.ScoreCardInputBean;
+import com.prama.sportingclay.view.bean.ScoresInfoBean;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.ws.rs.QueryParam;
+
 import static com.prama.sportingclay.literals.ApplicationLiterals.applicationRoot;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @RequestMapping(value=applicationRoot)
 public class ShooterRestService {
-
-    @Autowired
-    private ShooterService shooterService;
 
     @Autowired
     private ShooterController shooterController;
@@ -27,8 +30,25 @@ public class ShooterRestService {
         return shooterController.getShooterDetails(userName);
     }
 
-    @RequestMapping(value = "/shooter/{userId}", method = GET, produces = APPLICATION_JSON_VALUE)
-    public ShooterInfoBean getUserDetailsById(@PathVariable(value="userId") Integer userId){
-        return shooterController.getShooterInfoById(userId);
+    @RequestMapping(value = "/shooter/id/{userId}", method = GET, produces = APPLICATION_JSON_VALUE)
+    public ShooterInfoBean getUserDetailsById(@PathVariable(value="userId") String userId){
+        if(StringUtils.isNumericSpace(userId))
+            return shooterController.getShooterInfoById(Integer.parseInt(userId));
+        return getUserDetails(userId);
+    }
+
+    @RequestMapping(value = "/shooter/{userId}/scores", method = GET, produces = APPLICATION_JSON_VALUE)
+    public ScoresInfoBean getScores(@CookieValue(value="userId") Integer userId,
+                                   @QueryParam(value = "facilityId") Integer facilityId,
+                                   @QueryParam(value = "startDate") String startDate,
+                                   @QueryParam(value = "endDate") String endDate){
+        return shooterController.getScores(userId, facilityId, startDate, endDate);
+    }
+
+    @RequestMapping(value = "/shooter/score", method = POST, produces = APPLICATION_JSON_VALUE)
+    public void submitScore(@QueryParam(value="userId") Integer userId,
+                           @QueryParam(value= "facilityId") Integer facilityId,
+                           ScoreCardInputBean scoreCardInputBean){
+        shooterController.submitScore(userId,facilityId,scoreCardInputBean);
     }
 }

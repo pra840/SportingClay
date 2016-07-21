@@ -1,39 +1,18 @@
 package com.prama.sportingclay.authentication;
 
-import com.prama.sportingclay.view.bean.UserInfoBean;
-import com.prama.sportingclay.view.bean.QuestionBean;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
 
 /**
  * Created by pmallapur on 6/27/2016.
  */
 public class UserContext {
+    protected ShooterInfoBean shooterinfo;
 
-    protected UserInfoBean userInfoBean;
-    protected QuestionBean questionBean;
-    protected ShooterInfoBean shooterInfoBean;
-
-    public UserInfoBean getUserInfoBean() {
-        return userInfoBean;
+    public ShooterInfoBean getShooterinfo() {
+        return shooterinfo;
     }
 
-    public void setUserInfoBean(UserInfoBean userInfoBean) {
-        this.userInfoBean = userInfoBean;
-    }
-
-    public QuestionBean getQuestionBean() {
-        return questionBean;
-    }
-
-    public void setQuestionBean(QuestionBean questionBean) {
-        this.questionBean = questionBean;
-    }
-
-    public ShooterInfoBean getShooterInfoBean() {
-        return shooterInfoBean;
-    }
-
-    public void setShooterInfoBean(ShooterInfoBean shooterInfoBean) {
-        this.shooterInfoBean = shooterInfoBean;
+    public void setShooterinfo(ShooterInfoBean shooterinfo) {
+        this.shooterinfo = shooterinfo;
     }
 }

@@ -1,13 +1,13 @@
 package com.prama.sportingclay.mapper;
 
+import com.prama.sportingclay.domain.Auth;
+import com.prama.sportingclay.domain.RoleEnum;
 import com.prama.sportingclay.domain.Shooter;
 import com.prama.sportingclay.domain.ShooterClassEnum;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
-import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,7 +25,7 @@ public class DomainToBeanMapperTest {
 
     @Test
     public void domainToBeanMapper(){
-        ShooterInfoBean shooterInfoBean = mapper.mapDomainToBean(populateDomain());
+        ShooterInfoBean shooterInfoBean = mapper.mapDomainToBean(populateDomain(), populateAuth());
         expectedResults(shooterInfoBean);
     }
 
@@ -36,6 +36,7 @@ public class DomainToBeanMapperTest {
         assertEquals("pra840@gmail.com", shooterInfoBean.getEmailAddress());
         assertEquals(ShooterClassEnum.CLASS_MASTER.getShooterClass(), shooterInfoBean.getShooterClass());
         assertEquals("Java Tech Lead", shooterInfoBean.getOccupation());
+        assertEquals(RoleEnum.SUPER_USER.name(), shooterInfoBean.getLoginDataBean().getRole().toUpperCase());
     }
 
     private Shooter populateDomain(){
@@ -48,6 +49,13 @@ public class DomainToBeanMapperTest {
         shooter.setOccupation("Java Tech Lead");
         shooter.setDateOfBirth(new java.sql.Timestamp(getDate()));
         return shooter;
+    }
+
+    private Auth populateAuth(){
+        Auth auth = new Auth();
+        auth.setRoleId(3);
+        auth.setId(1);
+        return auth;
     }
 
     private long getDate(){

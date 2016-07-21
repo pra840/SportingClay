@@ -1,8 +1,11 @@
 package com.prama.sportingclay.dao.impl;
 
 import com.prama.sportingclay.dao.ShooterDAO;
+import com.prama.sportingclay.domain.Scorecard;
 import com.prama.sportingclay.domain.Shooter;
+import com.prama.sportingclay.domain.ShooterScores;
 import com.prama.sportingclay.utility.CommonMethods;
+import com.prama.sportingclay.view.bean.ScoresInfoBean;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
@@ -27,13 +30,10 @@ public class ShooterDAOImpl implements ShooterDAO {
     @Qualifier("sportingclayEmf")
     private EntityManager emf;
 
-    @Resource
-    CommonMethods commonMethods;
-
     @Override
     public Shooter getShooterInformation(String shooterName) {
-        String shooterNm = commonMethods.removeLastCharacter(shooterName);
-        if(commonMethods.isEmail(shooterNm)){
+        String shooterNm = CommonMethods.removeLastCharacter(shooterName);
+        if(CommonMethods.isEmail(shooterNm)){
             return getShooterInfoByEmail(shooterNm);
         }
         return getShooterInfoByName(shooterNm);
@@ -59,5 +59,21 @@ public class ShooterDAOImpl implements ShooterDAO {
         query.setParameter("SHOOTER_ID", shooterId);
         List<Shooter> shooters = (List<Shooter>) query.getResultList();
         return shooters != null && shooters.size() > 0 ? shooters.get(0) : null;
+    }
+
+    @Override
+    public List<ShooterScores> getShooterScores(Integer userId, String startDate, String endDate) {
+        Query query = emf.createQuery("from ShooterScores where userId = :SHOOTER_ID");
+        query.setParameter("SHOOTER_ID", userId);
+        List<ShooterScores> shooterScores = (List<ShooterScores>) query.getResultList();
+        return shooterScores != null && shooterScores.size() > 0 ? shooterScores : null;
+    }
+
+    @Override
+    public List<Scorecard> getScores(List<Integer> scoreCardId) {
+        Query query = emf.createQuery("from Scorecard where scorecardId IN(:SCORECARD_ID) ");
+        query.setParameter("SCORECARD_ID", scoreCardId);
+        List<Scorecard> shooters = (List<Scorecard>) query.getResultList();
+        return shooters != null && shooters.size() > 0 ? shooters : null;
     }
 }

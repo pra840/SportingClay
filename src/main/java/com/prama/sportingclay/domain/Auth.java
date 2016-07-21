@@ -28,6 +28,9 @@ public class Auth extends PersistentObject implements Serializable{
     @Column (name = "SHOOTER_EMAIL")
     private String shooterEmail;
 
+    @Column (name = "ROLE_ID")
+    private Integer roleId;
+
     public Auth() {
     }
 
@@ -61,5 +64,13 @@ public class Auth extends PersistentObject implements Serializable{
 
     public void setShooterId(Integer shooterId) {
         this.shooterId = shooterId;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }

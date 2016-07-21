@@ -3,31 +3,29 @@
 <link rel="stylesheet" href="/public/login.css">
 <script type="text/javascript" src="/public/login.js"></script>
 <body>
-<div class = "login">
-    <div id="login-top">
-        &nbsp;
-        <div id="login-messages" style="display: none;">
-            <span id="login-error"></span>
-        </div>
-        <div id="login-overlay">
-            <h1 id="login-title" data-res-id="pramaTM"></h1>
-
-            <div class="divider-solid" style="margin: 10px -10px;">
+    <div class = "login">
+        <div id="login-top">
+            &nbsp;
+            <div id="login-messages" style="display: none;">
+                <span id="login-error"></span>
             </div>
-            <div id="userDetails" class="clearfix">
-                <input id="userId" data-id="userId" type="text" class="required error-inside rounded"
-                       data-default="ID" data-placeholder-res-id="UserIdLG" placeholder="ID" />
-                <input id="userPassword" data-id="userPassword" type="password" class="required error-inside rounded"
-                       data-default="PASSWORD" data-placeholder-res-id="UserPassword" placeholder="PASSWORD"/>
-                <p>
-                    <input id= "signIn" type="button" value = "SIGN IN"/>
-                    &nbsp;
-                    <input id= "signUp" type="button" value = "SIGN UP" onclick="window.location.href='/public/signup.html';"/></p>
+            <div id="login-overlay">
+                <h1 id="login-title" data-res-id="pramaTM"></h1>
 
+                <div class="divider-solid" style="margin: 10px -10px;">
+                </div>
+                <div id="userDetails" class="clearfix">
+                    <input id="userId" data-id="userId" type="text" class="required error-inside rounded"
+                           data-default="ID" data-placeholder-res-id="UserIdLG" placeholder="ID" />
+                    <input id="userPassword" data-id="userPassword" type="password" class="required error-inside rounded"
+                           data-default="PASSWORD" data-placeholder-res-id="UserPassword" placeholder="PASSWORD"/>
+                    <p>
+                        <input id= "signIn" type="button" value = "SIGN IN"/>
+                        &nbsp;
+                        <input id= "signUp" type="button" value = "SIGN UP" onclick="window.location.href='/public/signup.html';"/></p>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </body>
-
-</html>

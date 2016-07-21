@@ -1,5 +1,7 @@
 package com.prama.sportingclay.service;
 
+import com.prama.sportingclay.view.bean.ScoreCardInputBean;
+import com.prama.sportingclay.view.bean.ScoresInfoBean;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
 
 /**
@@ -7,7 +9,7 @@ import com.prama.sportingclay.view.bean.ShooterInfoBean;
  */
 public interface ShooterService {
 
-    void signup(String shooterName,Integer phoneNum,
+    void signup(String shooterName,Long phoneNum,
                 String occupation,String dob,
                 String shooterClass, String password,
                 String emailAddress,String question,
@@ -16,4 +18,8 @@ public interface ShooterService {
     ShooterInfoBean getShooterInfoById(Integer shooterId);
 
     ShooterInfoBean getShooterDetails(String userName);
+
+    ScoresInfoBean getScores(Integer userId, Integer facilityId, String startDate, String endDate);
+
+    void submitScore(Integer userId, Integer facilityId,ScoreCardInputBean scoreCardInputBean);
 }
