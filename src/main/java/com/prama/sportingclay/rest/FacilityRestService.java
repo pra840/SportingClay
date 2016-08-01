@@ -49,10 +49,7 @@ public class FacilityRestService extends BaseController{
     @RequestMapping(value = { "/facility/{facilityName}" }, method = GET, produces = APPLICATION_JSON_VALUE)
     public FacilitiesBean getFacility(
             //HttpServletRequest request, HttpServletResponse response
-            @PathVariable("facilityName") String facilityName
-    )
-            throws ServletException, IOException, RuntimeException {
-
+            @PathVariable("facilityName") String facilityName)throws ServletException, IOException, RuntimeException {
         return facilityService.getFacilityDetails(null,null,null,null,facilityName);
     }
 

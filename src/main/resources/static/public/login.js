@@ -1,5 +1,7 @@
 $(document).ready(function() {
     $('#signIn').click( function() {
+        JSON.stringify(getCookie("env"));
+
         var url = "http://localhost:8072/prama/sportingclay/shooter/auth?";
 
         var redirectWindowUrl = "http://localhost:8072/prama/sportingclay/shooter/id/" + $("#userId").val() + "/";
@@ -29,3 +31,9 @@ $(document).ready(function() {
         });
     });
 });
+
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+}

@@ -9,16 +9,16 @@ import com.prama.sportingclay.utility.LoginValidator;
 import com.prama.sportingclay.utility.Validator;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.CookieParam;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
@@ -46,9 +46,18 @@ public class LoginRestService extends BaseController {
     @Autowired
     ShooterService shooterService;
 
+    @Value("${spring.profiles.active}")
+    private String profile;
+
     @RequestMapping(value = { "/login" }, method = GET, produces = APPLICATION_JSON_VALUE)
     public void loadLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        redirectToPage(LOGIN_PAGE, request, response);
+        setCookie(response);
+        resendToPage(LOGIN_PAGE, request, response);
+    }
+
+    private void setCookie(HttpServletResponse response){
+        Cookie cookie = new Cookie("profile",profile);
+        response.addCookie(cookie);
     }
 
     @RequestMapping(value = { "/shooter/auth" }, method = POST, produces = APPLICATION_JSON_VALUE)

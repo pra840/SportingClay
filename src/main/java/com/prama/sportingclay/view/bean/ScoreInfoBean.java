@@ -1,5 +1,7 @@
 package com.prama.sportingclay.view.bean;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,15 +11,6 @@ import java.util.List;
 public class ScoreInfoBean extends PageDataBean {
     private Integer facilityId;
     private List<ScoreCardBean> scorecard = new ArrayList<>();
-    private Integer total;
-
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
 
     public List<ScoreCardBean> getScorecard() {
         return scorecard;

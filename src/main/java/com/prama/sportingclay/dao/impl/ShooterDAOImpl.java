@@ -63,7 +63,7 @@ public class ShooterDAOImpl implements ShooterDAO {
 
     @Override
     public List<ShooterScores> getShooterScores(Integer userId, String startDate, String endDate) {
-        Query query = emf.createQuery("from ShooterScores where userId = :SHOOTER_ID");
+        Query query = emf.createQuery("from ShooterScores where shooterId = :SHOOTER_ID");
         query.setParameter("SHOOTER_ID", userId);
         List<ShooterScores> shooterScores = (List<ShooterScores>) query.getResultList();
         return shooterScores != null && shooterScores.size() > 0 ? shooterScores : null;

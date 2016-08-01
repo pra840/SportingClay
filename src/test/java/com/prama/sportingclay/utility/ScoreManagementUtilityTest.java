@@ -3,9 +3,16 @@ package com.prama.sportingclay.utility;
 import com.prama.sportingclay.view.bean.ScoreCardInputBean;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.util.CollectionUtils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 import static com.prama.sportingclay.utility.ScoreManagementUtility.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by pmallapur on 7/15/2016.
@@ -49,6 +56,34 @@ public class ScoreManagementUtilityTest {
 
     @Test
     public void testTotalScore(){
+        assertEquals(new Integer(8),getTotalScore(scoreCardInputBean));
+    }
+
+    @Test
+    public void testTotalScore_Calc(){
+        scoreCardInputBean.setTotal(null);
         assertEquals(new Integer(13),getTotalScore(scoreCardInputBean));
+    }
+
+    @Test
+    public void arrange(){
+        String[] team= {"Sanoj", "Niket", "Sachin", "Prasad", "Tejas", "Sujith",
+                "Chirag","Linesh", "Pritesh", "Anil", "Sudhakar", "Ajay", "Lenin",
+                "Sakib", "Debasis", "Pawan", "Jagadish"};
+
+        String[] playing11= {"Sanoj", "Niket", "Prasad", "Tejas", "Sujith",
+                "Chirag","Linesh", "Pritesh",  "Ajay", "Debasis", "Pawan"};
+        arrangeAlpha(playing11);
+    }
+
+    private String arrangeAlpha(String[] players){
+        String team = "";
+        Collections.sort(Arrays.asList(players));
+
+        for (int i = 0; i< players.length; i ++) {
+            System.out.println((i+1) + ":" + players[i]);
+        }
+
+        return team;
     }
 }

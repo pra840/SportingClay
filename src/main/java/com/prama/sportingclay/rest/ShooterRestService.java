@@ -6,7 +6,6 @@ import com.prama.sportingclay.view.bean.ScoresInfoBean;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,7 +37,7 @@ public class ShooterRestService {
     }
 
     @RequestMapping(value = "/shooter/{userId}/scores", method = GET, produces = APPLICATION_JSON_VALUE)
-    public ScoresInfoBean getScores(@CookieValue(value="userId") Integer userId,
+    public ScoresInfoBean getScores(@PathVariable(value="userId") Integer userId,
                                    @QueryParam(value = "facilityId") Integer facilityId,
                                    @QueryParam(value = "startDate") String startDate,
                                    @QueryParam(value = "endDate") String endDate){

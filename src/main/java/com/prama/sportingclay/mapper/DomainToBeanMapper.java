@@ -63,14 +63,13 @@ public class DomainToBeanMapper {
         for(Scorecard scorecard:scorecards) {
             ScoreInfoBean scoreInfoBean = new ScoreInfoBean();
             scoreInfoBean.setId(scorecard.getScorecardId());
-            scoreInfoBean.setScorecard(getScoreCardBean(scorecard.getStation_Target_Score()));
-
+            scoreInfoBean.setScorecard(getScoreCardBean(scorecard));
             scoreInfoBean.setFacilityId(getFacilityDetails(scorecard.getScorecardId(), scores));
             scoreInfoBeanList.add(scoreInfoBean);
-
+            if (scoresInfoBean.getOutOfScore()==null) scoresInfoBean.setOutOfScore(scorecard.getOutOfScore());
+            if (scoresInfoBean.getTotalScore()==null) scoresInfoBean.setTotalScore(scorecard.getTotalScore());
             scoresInfoBean.setScoreInfoBeanList(scoreInfoBeanList);
         }
-
         return scoresInfoBean;
     }
 
@@ -79,12 +78,16 @@ public class DomainToBeanMapper {
         return null;
     }
 
-    private List<ScoreCardBean> getScoreCardBean(String station_target_score){
+    private List<ScoreCardBean> getScoreCardBean(Scorecard scorecard){
+        String station_target_score = scorecard.getStation_Target_Score();
         List<ScoreCardBean> scoreCardBeanList = new ArrayList<>();
         String[] allScores= StringUtils.split(station_target_score, ",");
         for(int i=0; i<allScores.length; i++ ) {
             String[] indvScore = allScores[i].split("-");
-            scoreCardBeanList.add(new ScoreCardBean(parseInt(indvScore[0]), parseInt(indvScore[1]), indvScore[2]));
+            Integer stationId = parseInt(indvScore[0]);
+            ScoreCardBean cardBean = new ScoreCardBean(parseInt(indvScore[0]), parseInt(indvScore[1]), indvScore[2]);
+            String[] stationTotal = scorecard.getStationTotal().split("-");
+            scoreCardBeanList.add(cardBean);
         }
         return scoreCardBeanList;
     }

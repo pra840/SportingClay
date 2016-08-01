@@ -1,18 +1,8 @@
 $(document).ready(function() {
     $('#register').click( function() {
-        var url = "http://localhost:8072/prama/sportingclay/facility?"
-                                   + "emailAddress="
-                                   + $("#emailAddress").val()
-                                   + "&phoneNumber="
-                                   + $("#phoneNumber").val()
-                                   + "&facilityName="
-                                   + $("#facilityName").val()
-                                   + "&longitude="
-                                   + $("#longitude").val()
-                                   + "&latitude="
-                                   + $("#latitude").val();
+        var url = "http://localhost:8072/prama/sportingclay/facility?";
+        var redirectWindowUrl = "http://localhost:8072/public/facility_home.html";
 
-        var redirectWindowUrl = "http://localhost:8072/public/error.html";
         $.ajax({
             type: 'POST',
               url: url,

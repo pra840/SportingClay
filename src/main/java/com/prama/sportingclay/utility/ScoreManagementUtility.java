@@ -113,7 +113,7 @@ public class ScoreManagementUtility {
 
     public static Integer getTotalScore(ScoreCardInputBean scoreCardInputBean){
         if(scoreCardInputBean.getTotal()!=null)
-            return 0;
+            return scoreCardInputBean.getTotal();
         return (getScore(scoreCardInputBean.getStation1())
                 +getScore(scoreCardInputBean.getStation2())
                 +getScore(scoreCardInputBean.getStation3())

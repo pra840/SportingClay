@@ -17,4 +17,8 @@ public abstract class BaseController {
     protected void redirectToPage(String page, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher(page).forward(request, response);
     }
+
+    protected void resendToPage(String page, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.sendRedirect(page);
+    }
 }
