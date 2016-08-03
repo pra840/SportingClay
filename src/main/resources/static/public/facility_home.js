@@ -21,7 +21,7 @@ $(document).ready(function() {
                 tmp = temp;
               },
               error: function(){
-                window.location.replace("http://localhost:8072/public/error.html");
+                window.location.replace("http://localhost:8072/prama/sportingclay/error");
               }
             });
             return tmp;
@@ -49,4 +49,8 @@ $(document).ready(function() {
         bounds.extend(marker.getPosition());
         map.fitBounds(bounds);
     }
+
+    $('#newFac').click( function() {
+    window.location.href="http://localhost:8072/prama/sportingclay/newFacility";
+    });
 });

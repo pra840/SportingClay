@@ -1,6 +1,9 @@
 $(document).ready(function(){
    $('#myScores').click( function() {
+        var userId = getCookie("prama-user");
+        alert('Cookie Found User Id: '+ userId);
        var url = "http://localhost:8072/prama/sportingclay/shooter/65/scores?"
+       var userUrl = "http://localhost:8072/prama/sportingclay/user/" + $userId + "/";
 
        $.ajax({
            type: 'GET',
@@ -36,10 +39,21 @@ $(document).ready(function(){
                 }
              },
              error: function(){
-               window.location.replace("http://localhost:8072/public/error.html");
+               window.location.replace("http://localhost:8072/prama/sportingclay/error");
              }
        });
    });
+   $('#myFacilities').click( function() {
+           var userId = getCookie("prama-user");
+           alert(JSON.stringify('Cookie Found User Id: '+ userId));
+        window.location.href="http://localhost:8072/prama/sportingclay/facilitiesMapView";
+   });
 });
+
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+}
 
 

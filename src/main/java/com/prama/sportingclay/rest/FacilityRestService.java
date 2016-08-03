@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 import java.io.IOException;
 
@@ -56,5 +55,15 @@ public class FacilityRestService extends BaseController{
     @RequestMapping(value = { "/facilities" }, method = GET, produces = APPLICATION_JSON_VALUE)
     public FacilitiesBean getFacilities() throws ServletException, IOException, RuntimeException {
         return facilityService.getFacilities();
+    }
+
+    @RequestMapping (value = {"/facilitiesMapView"}, method = GET, produces = APPLICATION_JSON_VALUE)
+    public void facilitiesMapView(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        redirectToPage(FACILITIES_PAGE, request, response);
+    }
+
+    @RequestMapping (value = {"/newFacility"}, method = GET, produces = APPLICATION_JSON_VALUE)
+    public void newFacility(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        redirectToPage(NEW_FACILITY_PAGE, request, response);
     }
 }

@@ -30,7 +30,7 @@ $(document).ready(function(){
                 }
              },
              error: function(){
-               window.location.replace("http://localhost:8072/public/error.html");
+               window.location.replace("http://localhost:8072/prama/sportingclay/error");
              }
        });
    });

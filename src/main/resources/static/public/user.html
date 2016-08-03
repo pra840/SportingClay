@@ -1,33 +1,32 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <title>User Info</title>
-<link rel="stylesheet" href="/public/superuser.css">
+<link rel="stylesheet" href="/public/user.css">
 <script type="text/javascript" src="/public/user.js"></script>
 <body>
-
-<div class = "login">
-    <div id="login-top">
+<div class = "user">
+    <div id="user-top">
         &nbsp;
-        <div id="login-messages" style="display: none;">
-            <span id="login-error"></span>
+        <div id="user-messages" style="display: none;">
+            <span id="user-error"></span>
         </div>
-        <div id="login-overlay">
-            <h1 id="login-title" data-res-id="pramaTM"></h1>
-
+        <div id="user-overlay">
+            <h1 id="user-title" data-res-id="pramaTM"></h1>
             <div class="divider-solid" style="margin: 10px -10px;">
-                <p>
-                    <input id= "myScores" type="button" value = "My Scores"/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input id= "myFacilities" type="button" value = "My Facilities"/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </p>
+                <input id= "myFacilities" type="button" value="MY FACILITIES"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id= "myScores" type="button" value="MY SCORES"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
         </div>
     </div>
-    <body>
-        <table id="scorecardTable" border="1">
-        </table>
-    </body>
 </div>
+    
+<table id="scorecardTable" border="1">
+</table>
+    
+
 </body>
 
 </html>

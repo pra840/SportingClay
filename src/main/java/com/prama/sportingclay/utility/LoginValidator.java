@@ -1,11 +1,6 @@
 package com.prama.sportingclay.utility;
 
-import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
-
-import javax.ws.rs.QueryParam;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static org.apache.commons.lang.StringUtils.isEmpty;
 

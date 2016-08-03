@@ -17,7 +17,7 @@ $(document).ready(function() {
                 window.location.replace(redirectWindowUrl);
               },
               error: function(){
-                window.location.replace("http://localhost:8072/public/error.html");
+                window.location.replace("http://localhost:8072/prama/sportingclay/error");
               }
         });
     });

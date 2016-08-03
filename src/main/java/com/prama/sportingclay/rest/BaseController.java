@@ -11,8 +11,10 @@ import java.io.IOException;
 public abstract class BaseController {
     public static final String LOGIN_PAGE = "/public/login.html";
     public static final String SUPERUSER_PAGE = "/public/superuser.html";
-    public static final String FACILITIES_PAGE = "/public/superuser.html";
+    public static final String FACILITIES_PAGE = "/public/facility_home.html";
     public static final String ERROR_PAGE = "/public/error.html";
+    public static final String NEW_FACILITY_PAGE = "/public/signupFacilities.html";
+    public static final String USER_PAGE = "/public/user.html";
 
     protected void redirectToPage(String page, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher(page).forward(request, response);
