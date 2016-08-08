@@ -11,5 +11,5 @@ public interface FacilityService {
     void manageFacility(String emailAddress, Long phoneNumber,String lat, String longitude, String facilityName);
     FacilitiesBean getFacilityDetails(String emailAddress, Long phoneNumber, String lat, String longitude, String facilityName);
     FacilitiesBean getFacilityDetails(Integer facilityId);
-    FacilitiesBean getFacilities();
+    FacilitiesBean getFacilities(Integer userId);
 }

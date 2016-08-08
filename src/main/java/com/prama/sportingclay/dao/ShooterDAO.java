@@ -11,9 +11,9 @@ import java.util.List;
  * Created by pmallapur on 6/19/2016.
  */
 public interface ShooterDAO {
-
     Shooter getShooterInformation(String shooterName);
     Shooter getShooterInfoById(Integer shooterId);
     List<ShooterScores> getShooterScores(Integer userId, String startDate, String endDate);
     List<Scorecard> getScores(List<Integer> scoreCardId);
+    List<Shooter> getShooters();
 }

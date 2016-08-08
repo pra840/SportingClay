@@ -7,6 +7,8 @@ import com.prama.sportingclay.view.bean.ShooterInfoBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.util.List;
+
 /**
  * Created by pmallapur on 6/20/2016.
  */
@@ -31,5 +33,9 @@ public class ShooterController {
 
     public void submitScore(Integer userId, Integer facilityId, ScoreCardInputBean scoreCardInputBean){
         shooterService.submitScore(userId, facilityId, scoreCardInputBean);
+    }
+
+    public List<ShooterInfoBean> getAllShooters(){
+        return shooterService.getShooters();
     }
 }

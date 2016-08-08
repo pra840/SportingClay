@@ -12,10 +12,7 @@ import org.springframework.util.CollectionUtils;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.apache.commons.lang.StringUtils.isEmpty;
 
@@ -56,8 +53,14 @@ public class FacilityDAOImpl implements FacilityDAO{
     }
 
     @Override
-    public List<Facility> getFacilities() {
-        Query query = emf.createQuery("from Facility");
+    public List<Facility> getFacilities(List<Integer> facilityIds) {
+        StringBuilder sb = new StringBuilder("from Facility");
+        if(!CollectionUtils.isEmpty(facilityIds))sb.append(" where facilityId IN (:facilityIds)");
+
+        Query query = emf.createQuery(sb.toString());
+
+        if(!CollectionUtils.isEmpty(facilityIds))query.setParameter("facilityIds", facilityIds);
+
         List<Facility> facilities = (List<Facility>) query.getResultList();
         return facilities;
     }

@@ -8,6 +8,10 @@ import com.prama.sportingclay.view.bean.ShooterInfoBean;
 public class UserContext {
     protected ShooterInfoBean shooterinfo;
 
+    public UserContext(ShooterInfoBean shooterinfo) {
+        this.shooterinfo = shooterinfo;
+    }
+
     public ShooterInfoBean getShooterinfo() {
         return shooterinfo;
     }

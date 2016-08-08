@@ -8,6 +8,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.lang.Integer.parseInt;
 
@@ -27,12 +28,23 @@ public class DomainToBeanMapper {
         shooterInfoBean.setDateOfBirth(shooter.getDateOfBirth()!=null ? shooter.getDateOfBirth().getTime():null);
         shooterInfoBean.setOccupation(shooter.getOccupation());
 
+        if(auth!=null)
+            shooterInfoBean.setLoginDataBean(mapLoginDataBean(auth));
+        return shooterInfoBean;
+    }
+
+    public static List<ShooterInfoBean> mapDomainToShootersBean(List<Shooter> shooters){
+        List<ShooterInfoBean> shootersInfoBean = new ArrayList<ShooterInfoBean>();
+        if(shooters==null||shooters.isEmpty())return shootersInfoBean;
+        shootersInfoBean.addAll(shooters.stream().map(shooter -> mapDomainToBean(shooter, null)).collect(Collectors.toList()));
+        return shootersInfoBean;
+    }
+
+    private static LoginDataBean mapLoginDataBean(Auth auth) {
         LoginDataBean loginDataBean = new LoginDataBean();
         loginDataBean.setId(auth.getId());
         loginDataBean.setRole(RoleEnum.getRole(auth.getRoleId()));
-
-        shooterInfoBean.setLoginDataBean(loginDataBean);
-        return shooterInfoBean;
+        return loginDataBean;
     }
 
     public static FacilitiesBean mapDomainToBean(List<Facility> facilities) {

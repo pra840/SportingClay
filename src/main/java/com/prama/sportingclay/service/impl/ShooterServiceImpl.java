@@ -7,6 +7,7 @@ import com.prama.sportingclay.dao.ShooterDAO;
 import com.prama.sportingclay.domain.*;
 import com.prama.sportingclay.mapper.DomainToBeanMapper;
 import com.prama.sportingclay.service.ShooterService;
+import com.prama.sportingclay.view.bean.LoginDataBean;
 import com.prama.sportingclay.view.bean.ScoreCardInputBean;
 import com.prama.sportingclay.view.bean.ScoresInfoBean;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
@@ -21,6 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.prama.sportingclay.domain.RoleEnum.*;
+import static com.prama.sportingclay.mapper.DomainToBeanMapper.mapDomainToShootersBean;
 import static com.prama.sportingclay.utility.ScoreManagementUtility.*;
 
 /**
@@ -93,6 +95,7 @@ public class ShooterServiceImpl implements ShooterService {
     @Override
     public ScoresInfoBean getScores(Integer userId, Integer facilityId, String startDate, String endDate) {
         List<ShooterScores> scores = shooterDAO.getShooterScores(userId, startDate, endDate);
+        if(scores==null || scores.isEmpty())return null;
         List<Integer> scoreCardIds = scores.stream().map(ShooterScores::getScorecardId).collect(Collectors.toList());
         List<Scorecard> scorecards = shooterDAO.getScores(scoreCardIds);
         return mapper.mapDomainToBean(scores, scorecards);
@@ -119,6 +122,11 @@ public class ShooterServiceImpl implements ShooterService {
         shooterScores.setShooterId(userId);
         shooterScores.setGameDate(new Timestamp(System.currentTimeMillis()));
         baseDAO.save(shooterScores);
+    }
+
+    @Override
+    public List<ShooterInfoBean> getShooters() {
+        return mapDomainToShootersBean(shooterDAO.getShooters());
     }
 
     public Integer getRole (String emailAddress){

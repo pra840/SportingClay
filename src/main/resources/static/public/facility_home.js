@@ -1,7 +1,17 @@
 $(document).ready(function() {
+    var userId = getCookie("prama-user");
+    alert(JSON.stringify(userId));
+
     var locations = function () {
         var tmp = null;
-        var url = "http://localhost:8072/prama/sportingclay/facilities";
+        var url = null;
+
+        if(userId== undefined)
+            url = "http://localhost:8072/prama/sportingclay/facilities";
+        else
+            url = "http://localhost:8072/prama/sportingclay/facilities/"+userId;
+
+        alert(JSON.stringify(url));
 
          $.ajax({
             type: 'GET',
@@ -54,3 +64,9 @@ $(document).ready(function() {
     window.location.href="http://localhost:8072/prama/sportingclay/newFacility";
     });
 });
+
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+}

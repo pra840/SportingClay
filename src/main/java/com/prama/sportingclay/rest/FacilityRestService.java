@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.QueryParam;
@@ -52,9 +53,20 @@ public class FacilityRestService extends BaseController{
         return facilityService.getFacilityDetails(null,null,null,null,facilityName);
     }
 
+    @RequestMapping(value = { "/facilities/{userId}" }, method = GET, produces = APPLICATION_JSON_VALUE)
+    public FacilitiesBean getFacilities(@PathVariable("userId") Integer userId) throws ServletException, IOException, RuntimeException {
+        return facilityService.getFacilities(userId);
+    }
+
     @RequestMapping(value = { "/facilities" }, method = GET, produces = APPLICATION_JSON_VALUE)
     public FacilitiesBean getFacilities() throws ServletException, IOException, RuntimeException {
-        return facilityService.getFacilities();
+        return facilityService.getFacilities(null);
+    }
+
+    @RequestMapping (value = {"/userFacilitiesMapView/{userId}"}, method = GET, produces = APPLICATION_JSON_VALUE)
+    public void facilitiesMapView(HttpServletRequest request, HttpServletResponse response, @PathVariable("userId") String userId) throws ServletException, IOException {
+        if(userId!= null)response.addCookie(new Cookie("prama-user", userId));
+        redirectToPage(FACILITIES_PAGE, request, response);
     }
 
     @RequestMapping (value = {"/facilitiesMapView"}, method = GET, produces = APPLICATION_JSON_VALUE)

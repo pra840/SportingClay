@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.QueryParam;
 
+import java.util.List;
+
 import static com.prama.sportingclay.literals.ApplicationLiterals.applicationRoot;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -19,7 +21,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @RequestMapping(value=applicationRoot)
-public class ShooterRestService {
+public class ShooterRestService extends BaseController{
 
     @Autowired
     private ShooterController shooterController;
@@ -49,5 +51,10 @@ public class ShooterRestService {
                            @QueryParam(value= "facilityId") Integer facilityId,
                            ScoreCardInputBean scoreCardInputBean){
         shooterController.submitScore(userId,facilityId,scoreCardInputBean);
+    }
+
+    @RequestMapping(value="/users", method = GET, produces = APPLICATION_JSON_VALUE)
+    public List<ShooterInfoBean> getAllUsers() {
+        return shooterController.getAllShooters();
     }
 }

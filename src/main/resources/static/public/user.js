@@ -1,15 +1,15 @@
 $(document).ready(function(){
+   var userId = getCookie("prama-user");
    $('#myScores').click( function() {
-        var userId = getCookie("prama-user");
-        alert('Cookie Found User Id: '+ userId);
-       var url = "http://localhost:8072/prama/sportingclay/shooter/65/scores?"
-       var userUrl = "http://localhost:8072/prama/sportingclay/user/" + $userId + "/";
+
+       var url = "http://localhost:8072/prama/sportingclay/shooter/" + userId + "/scores?";
+       var userUrl = "http://localhost:8072/prama/sportingclay/user/" + userId + "/";
 
        $.ajax({
            type: 'GET',
              url: url,
              data:{
-               'facilityId' : 129
+               'userId' : userId
              },
              dataType: "json",
              success: function(resultData) {
@@ -44,9 +44,7 @@ $(document).ready(function(){
        });
    });
    $('#myFacilities').click( function() {
-           var userId = getCookie("prama-user");
-           alert(JSON.stringify('Cookie Found User Id: '+ userId));
-        window.location.href="http://localhost:8072/prama/sportingclay/facilitiesMapView";
+        window.location.href="http://localhost:8072/prama/sportingclay/userFacilitiesMapView/"+userId;
    });
 });
 

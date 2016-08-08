@@ -15,6 +15,7 @@ public abstract class BaseController {
     public static final String ERROR_PAGE = "/public/error.html";
     public static final String NEW_FACILITY_PAGE = "/public/signupFacilities.html";
     public static final String USER_PAGE = "/public/user.html";
+    public static final String USERS_PAGE = "/public/users.html";
 
     protected void redirectToPage(String page, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher(page).forward(request, response);

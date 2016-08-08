@@ -1,8 +1,11 @@
 package com.prama.sportingclay.service;
 
+import com.prama.sportingclay.view.bean.LoginDataBean;
 import com.prama.sportingclay.view.bean.ScoreCardInputBean;
 import com.prama.sportingclay.view.bean.ScoresInfoBean;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
+
+import java.util.List;
 
 /**
  * Created by pmallapur on 7/3/2016.
@@ -22,4 +25,6 @@ public interface ShooterService {
     ScoresInfoBean getScores(Integer userId, Integer facilityId, String startDate, String endDate);
 
     void submitScore(Integer userId, Integer facilityId,ScoreCardInputBean scoreCardInputBean);
+
+    List<ShooterInfoBean> getShooters();
 }
