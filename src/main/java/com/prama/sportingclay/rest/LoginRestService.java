@@ -8,6 +8,7 @@ import com.prama.sportingclay.service.ShooterService;
 import com.prama.sportingclay.utility.LoginValidator;
 import com.prama.sportingclay.utility.UserContextProvider;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -58,7 +59,7 @@ public class LoginRestService extends BaseController {
 
     @RequestMapping(value = { "/login" }, method = GET, produces = APPLICATION_JSON_VALUE)
     public void loadLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        setCookie(response);
+        setEnvCookie(response);
         redirectToPage(LOGIN_PAGE, request, response);
     }
 
@@ -67,7 +68,7 @@ public class LoginRestService extends BaseController {
         redirectToPage(ERROR_PAGE, request, response);
     }
 
-    private void setCookie(HttpServletResponse response){
+    private void setEnvCookie(HttpServletResponse response){
         response.addCookie(new Cookie("env", profile));
     }
 
@@ -87,9 +88,11 @@ public class LoginRestService extends BaseController {
 
         if(shooterInfoBean==null || shooterInfoBean.getLoginDataBean()==null)
             return Response.ok().entity(shooterInfoBean).build();
+
         userContextProvider.setUserContext(new UserContext(shooterInfoBean));
+
         return Response.ok().entity(shooterInfoBean)
-                .cookie(new NewCookie("prama-user", shooterInfoBean.getLoginDataBean().getId().toString()+"-"+shooterInfoBean.getLoginDataBean().getRole()))
+                .cookie(new NewCookie("prama-user", shooterInfoBean.getId().toString()))
                 .build();
     }
 
@@ -127,12 +130,23 @@ public class LoginRestService extends BaseController {
 
     @RequestMapping(value = { "/user/{user}" }, method = GET, produces = APPLICATION_JSON_VALUE)
     public void userHandler(@PathVariable("user") String user, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.addCookie(new Cookie("prama-user", user));
+        response.addCookie(new Cookie("prama-user", getUserId(user)));
         redirectToPage(USER_PAGE, request, response);
+
     }
 
     @RequestMapping(value = { "/usersView" }, method = GET, produces = APPLICATION_JSON_VALUE)
     public void getAllUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         redirectToPage(USERS_PAGE, request, response);
+    }
+
+    private String getUserId(@PathVariable(value = "userId") String userId) {
+        Integer userID = null;
+        if(StringUtils.isNumericSpace(userId)) {
+            userID = Integer.parseInt(userId);
+        }else if (userId.contains("@")|| userId.equalsIgnoreCase("undefined")) {
+            userID = userContextProvider.getUserContext().getShooterinfo().getId();
+        }
+        return userID!=null? userID.toString():null;
     }
 }

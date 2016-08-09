@@ -7,7 +7,6 @@ import com.prama.sportingclay.dao.ShooterDAO;
 import com.prama.sportingclay.domain.*;
 import com.prama.sportingclay.mapper.DomainToBeanMapper;
 import com.prama.sportingclay.service.ShooterService;
-import com.prama.sportingclay.view.bean.LoginDataBean;
 import com.prama.sportingclay.view.bean.ScoreCardInputBean;
 import com.prama.sportingclay.view.bean.ScoresInfoBean;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;

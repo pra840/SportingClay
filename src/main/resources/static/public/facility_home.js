@@ -6,7 +6,7 @@ $(document).ready(function() {
         var tmp = null;
         var url = null;
 
-        if(userId== undefined)
+        if(userId== undefined )
             url = "http://localhost:8072/prama/sportingclay/facilities";
         else
             url = "http://localhost:8072/prama/sportingclay/facilities/"+userId;

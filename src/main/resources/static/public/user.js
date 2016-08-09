@@ -1,5 +1,6 @@
 $(document).ready(function(){
    var userId = getCookie("prama-user");
+
    $('#myScores').click( function() {
 
        var url = "http://localhost:8072/prama/sportingclay/shooter/" + userId + "/scores?";
@@ -13,6 +14,7 @@ $(document).ready(function(){
              },
              dataType: "json",
              success: function(resultData) {
+                alert("resultdata::" +JSON.stringify(resultData));
                 if(resultData){
                     var len = resultData.scoreInfoBeanList.length;
                     var txt = "<thead><h1>MY SCORECARD</h1>";
@@ -45,6 +47,9 @@ $(document).ready(function(){
    });
    $('#myFacilities').click( function() {
         window.location.href="http://localhost:8072/prama/sportingclay/userFacilitiesMapView/"+userId;
+   });
+   $('#newScore').click( function() {
+        window.location.href="http://localhost:8072/prama/sportingclay/newScore";
    });
 });
 

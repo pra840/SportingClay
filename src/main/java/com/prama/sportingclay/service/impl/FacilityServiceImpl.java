@@ -2,7 +2,6 @@ package com.prama.sportingclay.service.impl;
 
 import com.prama.sportingclay.dao.FacilityDAO;
 import com.prama.sportingclay.dao.ShooterDAO;
-import com.prama.sportingclay.domain.Facility;
 import com.prama.sportingclay.domain.ShooterScores;
 import com.prama.sportingclay.mapper.BeanToDomainMapper;
 import com.prama.sportingclay.service.FacilityService;
@@ -47,12 +46,13 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public FacilitiesBean getFacilities(Integer userId) {
-        List<Integer> facilityIds = null;
+        List<Integer> facilityIds = new ArrayList<>();
         if(userId!=null) {
             List<ShooterScores> shooterScores = shooterDAO.getShooterScores(userId, null, null);
             if (!CollectionUtils.isEmpty(shooterScores)) {
                 facilityIds = shooterScores.stream().map(ShooterScores::getFacilityId).collect(Collectors.toList());
             }
+            if(CollectionUtils.isEmpty(facilityIds))facilityIds.add(0);
         }
         return mapDomainToBean(facilityDAO.getFacilities(facilityIds));
     }
