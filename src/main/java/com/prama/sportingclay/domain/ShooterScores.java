@@ -3,6 +3,7 @@ package com.prama.sportingclay.domain;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -63,8 +64,8 @@ public class ShooterScores extends PersistentObject implements Serializable {
         this.scorecardId = scorecardId;
     }
 
-    public Timestamp getGameDate() {
-        return gameDate;
+    public Date getGameDate() {
+        return new Date(gameDate.getTime());
     }
 
     public void setGameDate(Timestamp gameDate) {

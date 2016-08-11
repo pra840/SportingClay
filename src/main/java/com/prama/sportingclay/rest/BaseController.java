@@ -17,6 +17,7 @@ public abstract class BaseController {
     public static final String USER_PAGE = "/public/user.html";
     public static final String USERS_PAGE = "/public/users.html";
     public static final String SCORECARD_PAGE = "/public/scorecard.html";
+    public static final String SCORES_PAGE = "/public/scores.html";
 
     protected void redirectToPage(String page, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher(page).forward(request, response);

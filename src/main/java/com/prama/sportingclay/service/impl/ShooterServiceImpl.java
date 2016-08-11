@@ -8,6 +8,7 @@ import com.prama.sportingclay.domain.*;
 import com.prama.sportingclay.mapper.DomainToBeanMapper;
 import com.prama.sportingclay.service.ShooterService;
 import com.prama.sportingclay.view.bean.ScoreCardInputBean;
+import com.prama.sportingclay.view.bean.ScoreInfoBean;
 import com.prama.sportingclay.view.bean.ScoresInfoBean;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
 import org.apache.commons.lang.StringUtils;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
 import static com.prama.sportingclay.domain.RoleEnum.*;
 import static com.prama.sportingclay.mapper.DomainToBeanMapper.mapDomainToShootersBean;
 import static com.prama.sportingclay.utility.ScoreManagementUtility.*;
+import static java.util.Arrays.asList;
 
 /**
  * Created by pmallapur on 7/3/2016.
@@ -126,6 +128,13 @@ public class ShooterServiceImpl implements ShooterService {
     @Override
     public List<ShooterInfoBean> getShooters() {
         return mapDomainToShootersBean(shooterDAO.getShooters());
+    }
+
+    @Override
+    public ScoreInfoBean getScore(Integer scorecardId) {
+        List<Scorecard> scorecards = shooterDAO.getScores(asList(scorecardId));
+        ShooterScores shooterScores = shooterDAO.getShooterScoreByScorecard(scorecardId);
+        return mapper.mapDomainToBean(asList(shooterScores), scorecards.get(0));
     }
 
     public Integer getRole (String emailAddress){

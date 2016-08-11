@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -67,26 +68,37 @@ public class DomainToBeanMapper {
         return facilitiesBean;
     }
 
-    public ScoresInfoBean mapDomainToBean(List<ShooterScores> scores, List<Scorecard> scorecards) {
+    public ScoresInfoBean mapDomainToBean(List<ShooterScores> shooterScores, List<Scorecard> scorecards) {
 
         ScoresInfoBean scoresInfoBean = new ScoresInfoBean();
-        List<ScoreInfoBean> scoreInfoBeanList = new ArrayList<>();
-
-        for(Scorecard scorecard:scorecards) {
-            ScoreInfoBean scoreInfoBean = new ScoreInfoBean();
-            scoreInfoBean.setId(scorecard.getScorecardId());
-            scoreInfoBean.setScorecard(getScoreCardBean(scorecard));
-            scoreInfoBean.setFacilityId(getFacilityDetails(scorecard.getScorecardId(), scores));
-            scoreInfoBeanList.add(scoreInfoBean);
-            if (scoresInfoBean.getOutOfScore()==null) scoresInfoBean.setOutOfScore(scorecard.getOutOfScore());
-            if (scoresInfoBean.getTotalScore()==null) scoresInfoBean.setTotalScore(scorecard.getTotalScore());
-            scoresInfoBean.setScoreInfoBeanList(scoreInfoBeanList);
-        }
+        List<ScoreInfoBean> scoreInfoBeanList = scorecards.stream().map(scorecard -> mapDomainToBean(shooterScores, scorecard)).collect(Collectors.toList());
+        scoresInfoBean.setScoreInfoBeanList(scoreInfoBeanList);
         return scoresInfoBean;
+    }
+
+    public ScoreInfoBean mapDomainToBean(List<ShooterScores> shooterScores, Scorecard scorecard) {
+
+        ScoreInfoBean scoreInfoBean = new ScoreInfoBean();
+        scoreInfoBean.setId(scorecard.getScorecardId());
+        scoreInfoBean.setScorecard(getScoreCardBean(scorecard));
+        scoreInfoBean.setFacilityId(getFacilityDetails(scorecard.getScorecardId(), shooterScores));
+        scoreInfoBean.setGameDate(getGameDate(scorecard.getScorecardId(), shooterScores));
+        scoreInfoBean.setOutOfScore(scorecard.getOutOfScore());
+        scoreInfoBean.setTotalScore(scorecard.getTotalScore());
+        return scoreInfoBean;
     }
 
     private Integer getFacilityDetails(Integer scorecardId, List<ShooterScores> scores) {
         scores.stream().filter(shooterScores -> shooterScores.getScorecardId().equals(scorecardId)).forEach(ShooterScores::getFacilityId);
+        return null;
+    }
+
+    private Date getGameDate(Integer scorecardId, List<ShooterScores> scores) {
+
+        for(ShooterScores shooterScores: scores){
+            if(shooterScores.getScorecardId().equals(scorecardId))
+                return shooterScores.getGameDate();
+        }
         return null;
     }
 
@@ -96,7 +108,7 @@ public class DomainToBeanMapper {
         String[] allScores= StringUtils.split(station_target_score, ",");
         for(int i=0; i<allScores.length; i++ ) {
             String[] indvScore = allScores[i].split("-");
-            Integer stationId = parseInt(indvScore[0]);
+            parseInt(indvScore[0]);
             ScoreCardBean cardBean = new ScoreCardBean(parseInt(indvScore[0]), parseInt(indvScore[1]), indvScore[2]);
             String[] stationTotal = scorecard.getStationTotal().split("-");
             scoreCardBeanList.add(cardBean);

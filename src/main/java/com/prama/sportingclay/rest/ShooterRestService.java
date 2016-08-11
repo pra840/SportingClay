@@ -3,6 +3,7 @@ package com.prama.sportingclay.rest;
 import com.prama.sportingclay.controller.ShooterController;
 import com.prama.sportingclay.utility.UserContextProvider;
 import com.prama.sportingclay.view.bean.ScoreCardInputBean;
+import com.prama.sportingclay.view.bean.ScoreInfoBean;
 import com.prama.sportingclay.view.bean.ScoresInfoBean;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
 import org.apache.commons.lang.StringUtils;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.QueryParam;
@@ -52,16 +54,26 @@ public class ShooterRestService extends BaseController{
                                    @QueryParam(value = "startDate") String startDate,
                                    @QueryParam(value = "endDate") String endDate){
         Integer userID = getUserId(userId);
-        if(userID!= null)
-            return shooterController.getScores(userID, facilityId, startDate, endDate);
-        return null;
+        ScoresInfoBean scoresInfoBean = null;
+        if(userID!= null) {
+            scoresInfoBean = shooterController.getScores(userID, facilityId, startDate, endDate);
+        }
+        if(scoresInfoBean== null)
+            scoresInfoBean = new ScoresInfoBean();
+        return scoresInfoBean;
+    }
+
+    @RequestMapping(value = "/shooter/scores", method = GET, produces = APPLICATION_JSON_VALUE)
+    public void getScorecards(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.addCookie(new Cookie("prama-user", getUserId(null).toString()));
+        redirectToPage(SCORES_PAGE, request, response);
     }
 
     private Integer getUserId(@PathVariable(value = "userId") String userId) {
         Integer userID = null;
         if(StringUtils.isNumericSpace(userId)) {
             userID = Integer.parseInt(userId);
-        }else if (userId.contains("@")|| userId.equalsIgnoreCase("undefined")) {
+        }else if (userId ==null || userId.contains("@")|| userId.equalsIgnoreCase("undefined")) {
             userID = userContextProvider.getUserContext().getShooterinfo().getId();
         }
         return userID;
@@ -82,5 +94,10 @@ public class ShooterRestService extends BaseController{
     @RequestMapping (value = {"/newScore"}, method = GET, produces = APPLICATION_JSON_VALUE)
     public void newScore(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         redirectToPage(SCORECARD_PAGE, request, response);
+    }
+
+    @RequestMapping(value = "/shooter/score/{scorecardId}", method = GET, produces = APPLICATION_JSON_VALUE)
+    public ScoreInfoBean getScoreById(@PathVariable(value="scorecardId") Integer scoreCardId){
+        return shooterController.getScore(scoreCardId);
     }
 }

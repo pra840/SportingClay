@@ -68,11 +68,13 @@ public class ScoreManagementUtilityTest {
     @Test
     public void arrange(){
         String[] team= {"Sanoj", "Niket", "Sachin", "Prasad", "Tejas", "Sujith",
-                "Chirag","Linesh", "Pritesh", "Anil", "Sudhakar", "Ajay", "Lenin",
-                "Sakib", "Debasis", "Pawan", "Jagadish"};
+                "Chirag","Linesh", "Pritesh", "Sudhakar", "Ajay",
+                 "Debasis", "Pawan", "Jagadish"};
 
-        String[] playing11= {"Sanoj", "Niket", "Prasad", "Tejas", "Sujith",
-                "Chirag","Linesh", "Pritesh",  "Ajay", "Debasis", "Pawan"};
+        String[] playing11= {"Sanoj", "Niket", "Sachin", "Prasad", "Sujith",
+                "Chirag","Linesh", "Pritesh", "Sudhakar", "Ajay",
+                "Debasis"};
+
         arrangeAlpha(playing11);
     }
 

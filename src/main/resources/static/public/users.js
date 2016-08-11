@@ -10,7 +10,7 @@ $(document).ready(function() {
         success: function(resultData) {
             for (var i = 0; i < resultData.length; i++) {
                 $('#map_canvas').append("<p><a href='http://localhost:8072/prama/sportingclay/user/"+resultData[i].id+"/'>"+resultData[i].name+"</a></p>");
-                }
+            }
         },
         error: function(){
             window.location.replace("http://localhost:8072/prama/sportingclay/error");

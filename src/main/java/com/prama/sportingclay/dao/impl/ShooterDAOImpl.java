@@ -83,4 +83,12 @@ public class ShooterDAOImpl implements ShooterDAO {
         List<Shooter> shooters = (List<Shooter>) query.getResultList();
         return shooters != null && shooters.size() > 0 ? shooters : null;
     }
+
+    @Override
+    public ShooterScores getShooterScoreByScorecard(Integer scorecardId) {
+        Query query = emf.createQuery("from ShooterScores where scorecardId = :SCORECARD_ID");
+        query.setParameter("SCORECARD_ID", scorecardId);
+        List<ShooterScores> shooterScores = (List<ShooterScores>) query.getResultList();
+        return shooterScores != null && shooterScores.size() > 0 ? shooterScores.get(0) : null;
+    }
 }

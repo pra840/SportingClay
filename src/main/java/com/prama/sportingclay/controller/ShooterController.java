@@ -2,6 +2,7 @@ package com.prama.sportingclay.controller;
 
 import com.prama.sportingclay.service.ShooterService;
 import com.prama.sportingclay.view.bean.ScoreCardInputBean;
+import com.prama.sportingclay.view.bean.ScoreInfoBean;
 import com.prama.sportingclay.view.bean.ScoresInfoBean;
 import com.prama.sportingclay.view.bean.ShooterInfoBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,10 @@ public class ShooterController {
 
     public List<ShooterInfoBean> getAllShooters(){
         return shooterService.getShooters();
+    }
+
+
+    public ScoreInfoBean getScore(Integer scoreCardId) {
+        return shooterService.getScore(scoreCardId);
     }
 }

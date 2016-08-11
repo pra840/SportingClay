@@ -11,17 +11,6 @@ import java.util.List;
 public class ScoresInfoBean {
 
     private List<ScoreInfoBean> scoreInfoBeanList;
-    private Integer totalScore;
-
-    public Integer getOutOfScore() {
-        return outOfScore;
-    }
-
-    public void setOutOfScore(Integer outOfScore) {
-        this.outOfScore = outOfScore;
-    }
-
-    private Integer outOfScore;
 
     public List<ScoreInfoBean> getScoreInfoBeanList() {
         return scoreInfoBeanList;
@@ -29,13 +18,5 @@ public class ScoresInfoBean {
 
     public void setScoreInfoBeanList(List<ScoreInfoBean> scoreInfoBeanList) {
         this.scoreInfoBeanList = scoreInfoBeanList;
-    }
-
-    public Integer getTotalScore() {
-        return totalScore;
-    }
-
-    public void setTotalScore(Integer totalScore) {
-        this.totalScore = totalScore;
     }
 }

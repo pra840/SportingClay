@@ -3,7 +3,6 @@ package com.prama.sportingclay.dao;
 import com.prama.sportingclay.domain.Scorecard;
 import com.prama.sportingclay.domain.Shooter;
 import com.prama.sportingclay.domain.ShooterScores;
-import com.prama.sportingclay.view.bean.ScoresInfoBean;
 
 import java.util.List;
 
@@ -16,4 +15,5 @@ public interface ShooterDAO {
     List<ShooterScores> getShooterScores(Integer userId, String startDate, String endDate);
     List<Scorecard> getScores(List<Integer> scoreCardId);
     List<Shooter> getShooters();
+    ShooterScores getShooterScoreByScorecard(Integer scorecardId);
 }
