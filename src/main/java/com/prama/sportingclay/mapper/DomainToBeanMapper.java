@@ -89,7 +89,10 @@ public class DomainToBeanMapper {
     }
 
     private Integer getFacilityDetails(Integer scorecardId, List<ShooterScores> scores) {
-        scores.stream().filter(shooterScores -> shooterScores.getScorecardId().equals(scorecardId)).forEach(ShooterScores::getFacilityId);
+        for(ShooterScores shooterScores: scores){
+            if(shooterScores.getScorecardId().equals(scorecardId))
+                return shooterScores.getFacilityId();
+        }
         return null;
     }
 

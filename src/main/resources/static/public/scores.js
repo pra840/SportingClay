@@ -11,7 +11,7 @@ $(document).ready(function() {
         success: function(resultData) {
             if(resultData){
                 for (var i = 0; i < resultData.scoreInfoBeanList.length; i++) {
-                    $('#myScores').append("<p><a href='http://localhost:8072/prama/sportingclay/shooter/score/"+resultData.scoreInfoBeanList[i].id+"/'>"+getScoreCardTime(resultData.scoreInfoBeanList[i].gameDate)+"</a></p>");
+                    $('#myScores').append("<p id='scoreById'><a href='http://localhost:8072/prama/sportingclay/shooter/score/"+resultData.scoreInfoBeanList[i].id+"/'"+"onclick="+getScoreByID(this)+">"+getScoreCardTime(resultData.scoreInfoBeanList[i].gameDate)+"</a></p>");
                 }
             }
         },
@@ -34,3 +34,27 @@ function getScoreCardTime(time){
 
     return textMonth[varDate.getMonth()].toString()+"-"+ varDate.getDate().toString()+"-"+ varDate.getFullYear().toString();
 }
+
+window.getScoreByID = function(obj) {
+    alert(JSON.stringify(obj));
+    document.getElementById('scoreById').innerHTML = obj.innerHTML;
+}
+
+function getScoreByID(scorecardId)
+    $.ajax({
+        type: 'GET',
+        async: false,
+        global: false,
+        url: url,
+        dataType: 'JSON',
+        success: function(resultData) {
+            if(resultData){
+                for (var i = 0; i < resultData.scoreInfoBeanList.length; i++) {
+                    $('#myScores').append("<p id='scoreById'><a href='http://localhost:8072/prama/sportingclay/shooter/score/"+resultData.scoreInfoBeanList[i].id+"/'"+"onclick="+getScoreByID(this)+">"+getScoreCardTime(resultData.scoreInfoBeanList[i].gameDate)+"</a></p>");
+                }
+            }
+        },
+        error: function(){
+            window.location.replace("http://localhost:8072/prama/sportingclay/error");
+        }
+    });
