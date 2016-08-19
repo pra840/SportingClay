@@ -29,4 +29,6 @@ public interface ShooterService {
     List<ShooterInfoBean> getShooters();
 
     ScoreInfoBean getScore(Integer scorecardId);
+
+    void sendInvitation(String emailAddress);
 }

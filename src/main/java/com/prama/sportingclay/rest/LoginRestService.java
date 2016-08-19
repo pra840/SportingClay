@@ -121,6 +121,8 @@ public class LoginRestService extends BaseController {
         }
         shooterService.signup(shooterName,phoneNumber,occupation,dob,shooterClass,password,emailAddress,
                 question,answer);
+
+        shooterService.sendInvitation(emailAddress);
     }
 
     @RequestMapping(value = { "/superuser/{superuser}" }, method = GET, produces = APPLICATION_JSON_VALUE)

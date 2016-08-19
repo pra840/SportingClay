@@ -137,6 +137,11 @@ public class ShooterServiceImpl implements ShooterService {
         return mapper.mapDomainToBean(asList(shooterScores), scorecards.get(0));
     }
 
+    @Override
+    public void sendInvitation(String emailAddress) {
+
+    }
+
     public Integer getRole (String emailAddress){
         if(StringUtils.containsIgnoreCase(emailAddress, "@sedonatek.com")
                 || emailAddress.equalsIgnoreCase("pra840@gmail.com"))
